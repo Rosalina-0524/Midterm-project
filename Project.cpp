@@ -51,8 +51,8 @@ int main()
 	// 即使所有訂單丟給同台機器所需最大的小時數
 	int T = (total_qty / min_qty_per_hr) + 1;
 
-	float yieldMatrix[MAX_M][numMachine] = {0.0};
-	float bestyieldMatrix[][] = {0};
+	float yieldMatrix[MAX_M][numMachine];
+	float bestyieldMatrix[MAX_M][numMachine];
 	float profit[MAX_M] = {0};
 
 	int yield = 0;
@@ -80,54 +80,5 @@ int main()
 
 	cout << bestprofitsum;
 
-	/*
-		int best_fix_time = 0,
-		best_profit = profit;
-
-	for (int i = 0; i < total_time; i++)
-	{
-		efficiency = begin;
-		profit = 0;
-
-		for (int j = 0; j < total_time; j++)
-		{
-			efficiency -= breakdown;
-			if (j >= i and j <= i + fix_time - 1)
-			{
-				efficiency = 0;
-			}
-			else if (j == i + fix_time)
-			{
-				efficiency = 100;
-			}
-			else if (efficiency < stable)
-			{
-				efficiency = stable;
-			}
-			profit += efficiency * ideal / 100;
-		}
-
-		if (profit > best_profit)
-		{
-			best_profit = profit;
-			best_fix_time = i + 1;
-		}
-	}
-	cout << best_fix_time << "," << best_profit;
-
-	*/
-
 	return 0;
 }
-
-//pause = 1 <
-/*
-先排出m列原本的profit
-最小的 ap 開始修 假設 h = 1 ... h
-設一個計算已經修的cnt , cnt <= h
-
-計算row 的總和有多大
-
-有說一台機器最多能修幾次嗎
-
-*/
